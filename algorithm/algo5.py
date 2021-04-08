@@ -1,7 +1,7 @@
 '''
 정다면체
 
-두 개의 정 N면체와 정 M면체의 두 개의 주사위를 던져서 나올 수 있는 눈의 합 중 가장 확 률이 높은 숫자를 출력하는 프로그램을 작성하세요.
+두 개의 정 N면체와 정 M면체의 두 개의 주사위를 던져서 나올 수 있는 눈의 합 중 가장 확률이 높은 숫자를 출력하는 프로그램을 작성하세요.
 정답이 여러 개일 경우 오름차순으로 출력합니다.
 N과 M은 4, 6, 8, 12, 20 중의 하나입니다.
 '''
@@ -11,16 +11,16 @@ import sys
 
 sys.stdin=open('input.txt', 'r')
 n, m=map(int, input().split())
-cnt=[0]*(n+m+3)
-max=0
+cnt=[0]*(n+m+3) # 초기배열세팅
+max=0 # 최대값 세팅
 print(cnt)
 for i in range(1, n+1):
     for j in range(1, m+1):
-        cnt[i+j]+=1
+        cnt[i+j]+=1 # 인덱스=눈의 함, 1씩 카운팅
 
 for i in range(n+m+1):
-    if cnt[i]>max:
-        max=cnt[i]
+    if cnt[i]>max: 
+        max=cnt[i] # 최대값보다 확률이 클 경우 최대값 변경..
 for i in range(n+m+1):
     if cnt[i]==max:
         print(i, end=' ')

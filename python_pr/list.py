@@ -52,7 +52,7 @@ for x in enumerate(a): #인덱스번호와 요소를 튜플형태로 출력
 print()
 
 for index, value in enumerate(a):
-    print(index, value)
+    print(index, value) #인덱스 번호와 리스트 요소를 함께 출력
 print()
 
 if all(53>x for x in a): #모두 참일 때 출력
